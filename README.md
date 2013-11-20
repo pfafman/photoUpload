@@ -10,7 +10,7 @@ Testing a number of packages to allow the uploading of photos from either a desk
 ### Notes
 
 Orientation Diagram
-![Orientation Diagram](/notes/img.jpg)
+![Orientation Diagram](../notes/EXIF_Orientations.jpg.gif)
 
 ### External Packages
 
