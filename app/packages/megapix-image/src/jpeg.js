@@ -3198,6 +3198,3 @@ this.exifSpec = {
   this.JPEG.writeExifMetaData = writeExifMetaData;
 
 }).call(this);
-
-JPEG = this.JPEG
-
