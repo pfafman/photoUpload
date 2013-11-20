@@ -9,7 +9,7 @@ Testing a number of packages to allow the uploading of photos from either a desk
 
 ### Notes
 
-Orientation Diagram
+Orientation Diagram for fixing iOS 6+ images
 
 ![Orientation Diagram](https://raw.github.com/pfafman/photoUpload/master/notes/EXIF_Orientations.jpg.gif)
 
