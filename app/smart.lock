@@ -1,0 +1,33 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "coffee-alerts": {},
+      "spin": {},
+      "font-awesome": {},
+      "fastclick": {}
+    },
+    "packages": {
+      "coffee-alerts": {
+        "git": "https://github.com/pfafman/meteor-coffee-alerts.git",
+        "tag": "v0.1.1",
+        "commit": "20297df872419e42284cdfcbd6ca070c03d60077"
+      },
+      "spin": {
+        "git": "https://github.com/SachaG/meteor-spin.git",
+        "tag": "v0.2.0",
+        "commit": "fd3a2871a69442848b4b4e74f5e1ae28fa4a95a4"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.0.3",
+        "commit": "61e9361384347547ae144f8228faa4deffda23db"
+      },
+      "fastclick": {
+        "git": "https://github.com/percolatestudio/meteor-fastclick",
+        "tag": "v0.6.7",
+        "commit": "fcb3bfd34d9f6874e626b4e24e8f54107938db41"
+      }
+    }
+  }
+}
