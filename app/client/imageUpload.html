@@ -8,47 +8,32 @@
 </body>
 
 <template name="cameraTest">
-        <nav class="navbar  navbar-fixed-top navbar-inverse">
+    <nav class="navbar  navbar-fixed-top navbar-inverse">
         <div class="my-navbar-brand">
             Upload or take a photo
         </div>
     </nav>
-     <div class="container">       
-        <p>
-            <form role="form">
-                <div class="form-group">
-                    <label for="photo">Photo</label>
-                    <div>
-                        <button class="btn btn-default needsclick" id="photo-button"> 
-                            <i class="fa fa-camera"></i> Take Photo
-                        </button>
-                        <input class="xneedsclick" name="photo" type="file" capture="camera" accept="image/*" id="photo" />
-                        <p class="help-block">Choose or take a photo to upload.</p>
-                    </div>
-                </div>
-                {{#if haveNewImages}}
-                    <button type="submit" class="btn btn-primary">Upload</button>
-                {{/if}}
-            </form>
-        </p>
-        {{#each newImages}}
-            {{> image}}
-        {{/each}}
 
-        {{#each images}}
-            {{> image}}
-        {{/each}}
+    <div class="container">       
+        {{> photoUpload}}
+
+        {{#if haveImages}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Uploaded Images <small>{{imageCount}} images</small></h3>
+                </div>
+            {{#each images}}
+                {{> image}}
+            {{/each}}
+        {{/if}}
+
     </div>
 </template>
 
 <template name="image">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">{{name}} <small>{{size}} ({{orientation}})</small></h4>
-        </div>
-        <div class="panel-body">
-            <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" class="img-rounded my-image {{#if newImage}}}newImage{{/if}}" src="{{src}}" />
-        </div>
+    <div class="image-container">
+        <div> {{name}} <small>{{size}} ({{orientation}})</small></div>
+        <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" class="img-rounded my-image {{#if newImage}}}newImage{{/if}}" src="{{src}}" />
     </div>
 </template>
 

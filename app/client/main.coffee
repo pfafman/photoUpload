@@ -6,8 +6,8 @@ Meteor.startup ->
     #console.log("URL:",document.URL)
     if /mobile/i.test(navigator.userAgent)
         console.log('Mobile Device')
-        #$ ->
-        #    FastClick.attach document.body
+        $ ->
+            FastClick.attach document.body
 
         $(window).on "orientationchange", ->
             landscape = window.orientation is 90 or window.orientation is -90
