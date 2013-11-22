@@ -2,6 +2,10 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
+      "bootstrap-less-3": {
+        "git": "https://github.com/ianserlin/meteor-bootstrap-less",
+        "branch": "master"
+      },
       "coffee-alerts": {},
       "spin": {},
       "font-awesome": {},
@@ -13,6 +17,11 @@
       }
     },
     "packages": {
+      "bootstrap-less-3": {
+        "git": "https://github.com/ianserlin/meteor-bootstrap-less",
+        "branch": "master",
+        "commit": "c4f047b24a84fe71ff9347b6a19b4d23e92b501d"
+      },
       "coffee-alerts": {
         "git": "https://github.com/pfafman/meteor-coffee-alerts.git",
         "tag": "v0.1.1",
@@ -41,7 +50,7 @@
       "photo-uploader": {
         "git": "https://github.com/pfafman/meteor-photo-uploader.git",
         "branch": "master",
-        "commit": "5dc167994b55f4a390858c5b52a1bf5308513623"
+        "commit": "cfdd56443aa29e022815b8f32d660b505bdf6fb1"
       }
     }
   }

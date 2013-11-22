@@ -1,5 +1,8 @@
 {
   "packages": {
+    "bootstrap-less-3": {
+        "git": "https://github.com/ianserlin/meteor-bootstrap-less"
+    },
     "coffee-alerts": {},
     "spin": {},
     "font-awesome": {},
