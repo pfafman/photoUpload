@@ -20,7 +20,6 @@ Orientation Diagram for fixing iOS 6+ images
 * [JavaScript-Load-Image] (https://github.com/blueimp/JavaScript-Load-Image)
 
 
-
 ### Author
 
 Tim Pfafman

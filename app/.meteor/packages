@@ -13,5 +13,5 @@ spin
 font-awesome
 bootstrap-less-3
 fastclick
-load-image
 jquery-jcrop
+photo-uploader

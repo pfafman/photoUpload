@@ -1,4 +1,16 @@
 
+photoUploader = null
+
+Template.cameraTest.created = ->
+    if not photoUploader?
+        photoUploader = new PhotoUploadHandler
+            serverUploadMethod: "submitPhoto"
+            takePhotoButtonLabel: "Take Photo"
+            uploadButtonLabel: "Save Image"
+
+Template.cameraTest.rendered = ->
+    photoUploader?.reset()
+
 Template.cameraTest.helpers
 
     haveImages: ->

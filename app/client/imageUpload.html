@@ -32,7 +32,7 @@
 
 <template name="image">
     <div class="image-container">
-        <div> {{name}} <small>{{size}} ({{orientation}})</small></div>
+        <div> {{name}} <small>{{size}}</small></div>
         <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" class="img-rounded my-image {{#if newImage}}}newImage{{/if}}" src="{{src}}" />
     </div>
 </template>

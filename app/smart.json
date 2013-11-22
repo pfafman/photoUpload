@@ -4,6 +4,9 @@
     "spin": {},
     "font-awesome": {},
     "fastclick": {},
-    "jquery-jcrop": {}
+    "jquery-jcrop": {},
+    "photo-uploader": {
+        "git": "https://github.com/pfafman/meteor-photo-uploader.git"
+    }
   }
 }

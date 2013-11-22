@@ -6,7 +6,11 @@
       "spin": {},
       "font-awesome": {},
       "fastclick": {},
-      "jquery-jcrop": {}
+      "jquery-jcrop": {},
+      "photo-uploader": {
+        "git": "https://github.com/pfafman/meteor-photo-uploader.git",
+        "branch": "master"
+      }
     },
     "packages": {
       "coffee-alerts": {
@@ -33,6 +37,11 @@
         "git": "https://github.com/waltyuyu/meteor-jquery-jcrop.git",
         "tag": "v0.0.3",
         "commit": "45a62562f3d13cbc72a7710472a76cf9c3c589cd"
+      },
+      "photo-uploader": {
+        "git": "https://github.com/pfafman/meteor-photo-uploader.git",
+        "branch": "master",
+        "commit": "5dc167994b55f4a390858c5b52a1bf5308513623"
       }
     }
   }
