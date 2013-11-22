@@ -17,8 +17,7 @@ Orientation Diagram for fixing iOS 6+ images
 
 * [Meteor] (http://www.meteor.com)
 * [Bootstrap] (http://http://getbootstrap.com)
-* [ios-imagefile-megapixel] (https://github.com/stomita/ios-imagefile-megapixel)
-* [exif-parser] (https://github.com/dmarcos/exif-parser)
+* [JavaScript-Load-Image] (https://github.com/blueimp/JavaScript-Load-Image)
 
 
 
