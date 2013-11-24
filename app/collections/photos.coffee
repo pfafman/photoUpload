@@ -3,7 +3,7 @@
 @Photos = new Meteor.Collection('photos')
 
 Meteor.methods
-    submitPhoto: (photoAttributes) ->
+    submitPhoto: (photoAttributes, options) ->
         photo = _.extend _.pick(photoAttributes, "src", "name", "filesize", "orientation"),
             timestamp: new Date().getTime()
         

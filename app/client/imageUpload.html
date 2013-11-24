@@ -1,6 +1,6 @@
 <head>
   <title>Camera Test</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
 
 <body>
@@ -28,6 +28,11 @@
         {{/if}}
 
     </div>
+
+    <div class="container">
+        <button id="button-test" class="btn btn-default btn-sm needsclick">Test</button>
+        <button id="button-test-fc" class="btn btn-default btn-sm">Test FC</button>
+    </div>
 </template>
 
 <template name="image">
@@ -36,6 +41,7 @@
         <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" class="img-rounded my-image {{#if newImage}}}newImage{{/if}}" src="{{src}}" />
     </div>
 </template>
+
 
 
 

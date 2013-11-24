@@ -1,15 +1,11 @@
 {
   "packages": {
     "bootstrap-less-3": {
-        "git": "https://github.com/ianserlin/meteor-bootstrap-less"
+      "git": "https://github.com/ianserlin/meteor-bootstrap-less"
     },
     "coffee-alerts": {},
     "spin": {},
     "font-awesome": {},
-    "fastclick": {},
-    "jquery-jcrop": {},
-    "photo-uploader": {
-        "git": "https://github.com/pfafman/meteor-photo-uploader.git"
-    }
+    "fastclick": {}
   }
 }
