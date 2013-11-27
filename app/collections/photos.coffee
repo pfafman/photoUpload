@@ -4,7 +4,7 @@
 
 Meteor.methods
     submitPhoto: (photoAttributes, options) ->
-        photo = _.extend _.pick(photoAttributes, "src", "name", "filesize", "orientation"),
+        photo = _.extend _.pick(photoAttributes, "src", "name", "filesize", "orientation", "title", "caption"),
             timestamp: new Date().getTime()
         
         try   

@@ -7,6 +7,8 @@ Template.cameraTest.created = ->
             serverUploadMethod: "submitPhoto"
             takePhotoButtonLabel: "Take Photo"
             uploadButtonLabel: "Save Image"
+            editTitle: true
+            editCaption: true
 
 Template.cameraTest.rendered = ->
     #FastClick.attach(document.getElementById('button-test-fc'))
