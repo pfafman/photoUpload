@@ -2,13 +2,41 @@
 @import "packages/bootstrap-less-3/lib/less/bootstrap.lessimport";
 
 body {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .image-container {
-    padding: 10px;
-    //max-width: 70%;
-    //display: inline-block;
+
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .image-title {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .image-caption {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.photo-upload {
+    padding: 5px;
+    margin: auto;
 }
 
 .my-navbar-brand {

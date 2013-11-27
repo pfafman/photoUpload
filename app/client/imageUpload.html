@@ -14,40 +14,37 @@
         </div>
     </nav>
 
-    <div class="container">       
+    <div class="image-container">
 
         {{#if haveImages}}
-            
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Uploaded Images <small>{{imageCount}} images</small></h3>
-                </div>
             <div class="owl-carousel">
                 {{#each images}}
                     {{> image}}
                 {{/each}}
             </div>
-
         {{/if}}
 
-        {{> photoUpload}}
-
+        <p class="photo-upload">
+            {{> photoUpload}}
+        </p>
     </div>
 
+    <!--
     <div class="container">
         <button id="button-test" class="btn btn-default btn-sm needsclick">Test</button>
         <button id="button-test-fc" class="btn btn-default btn-sm">Test FC</button>
     </div>
+    -->
 </template>
 
 
 <template name="image">
     <div class="text-center image-container">
-        <div> {{title}} {{name}} <small>{{size}}</small></div>
+        <div class="image-title">{{title}} <small>{{size}}</small></div>
         <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" 
-            class="my-image img-rounded" src="{{src}}" />
+            class="" src="{{src}}" />
         {{#if caption}}
-            <div>{{caption}}</div>
+            <div class="image-caption">{{caption}}</div>
         {{/if}}
     </div>
 </template>

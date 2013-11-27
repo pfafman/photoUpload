@@ -21,7 +21,7 @@ Template.cameraTest.rendered = ->
         singleItem:true
         #itemsScaleUp:true
         autoHeight: true
-        autoPlay: 5000
+        #autoPlay: 5000
         #rewindNav: false
         #rewindSpeed: 200
 
