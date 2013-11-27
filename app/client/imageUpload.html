@@ -15,17 +15,22 @@
     </nav>
 
     <div class="container">       
-        {{> photoUpload}}
 
         {{#if haveImages}}
+            
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Uploaded Images <small>{{imageCount}} images</small></h3>
                 </div>
-            {{#each images}}
-                {{> image}}
-            {{/each}}
+            <div class="owl-carousel">
+                {{#each images}}
+                    {{> image}}
+                {{/each}}
+            </div>
+
         {{/if}}
+
+        {{> photoUpload}}
 
     </div>
 
@@ -35,12 +40,14 @@
     </div>
 </template>
 
+
 <template name="image">
-    <div class="image-container">
+    <div class="text-center image-container">
         <div> {{title}} {{name}} <small>{{size}}</small></div>
-        <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" class="img-rounded my-image {{#if newImage}}}newImage{{/if}}" src="{{src}}" />
+        <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" 
+            class="my-image img-rounded" src="{{src}}" />
         {{#if caption}}
-        <div>{{caption}}</div>
+            <div>{{caption}}</div>
         {{/if}}
     </div>
 </template>

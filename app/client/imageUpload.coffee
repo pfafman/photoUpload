@@ -13,6 +13,17 @@ Template.cameraTest.created = ->
 Template.cameraTest.rendered = ->
     #FastClick.attach(document.getElementById('button-test-fc'))
     photoUploader?.reset()
+    
+    $(".owl-carousel").owlCarousel
+        #navigation : true # Show next and prev buttons
+        slideSpeed : 300
+        paginationSpeed : 400
+        singleItem:true
+        #itemsScaleUp:true
+        autoHeight: true
+        autoPlay: 5000
+        #rewindNav: false
+        #rewindSpeed: 200
 
 Template.cameraTest.helpers
 
