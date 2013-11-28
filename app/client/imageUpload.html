@@ -8,26 +8,23 @@
 </body>
 
 <template name="cameraTest">
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="my-navbar navbar navbar-fixed-top navbar-inverse">
         <div class="my-navbar-brand">
             Upload or take a photo
         </div>
     </nav>
 
-    <div class="image-container">
+    {{#if haveImages}}
+        <div class="owl-carousel">
+            {{#each images}}
+                {{> carouselImage}}
+            {{/each}}
+        </div>
+    {{/if}}
 
-        {{#if haveImages}}
-            <div class="owl-carousel">
-                {{#each images}}
-                    {{> image}}
-                {{/each}}
-            </div>
-        {{/if}}
-
-        <p class="photo-upload">
-            {{> photoUpload}}
-        </p>
-    </div>
+    <p class="photo-upload">
+        {{> photoUpload}}
+    </p>
 
     <!--
     <div class="container">
@@ -38,14 +35,16 @@
 </template>
 
 
-<template name="image">
-    <div class="text-center image-container">
-        <div class="image-title">{{title}} <small>{{size}}</small></div>
-        <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" 
-            class="" src="{{src}}" />
-        {{#if caption}}
-            <div class="image-caption">{{caption}}</div>
-        {{/if}}
+<template name="carouselImage">
+    <div class="image-holder">
+        <span class="image-container">
+            <div class="image-title">{{title}} <small>{{size}}</small></div>
+            <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" 
+                class="carousel-image" src="{{src}}" />
+            {{#if caption}}
+                <div class="image-caption">{{caption}}</div>
+            {{/if}}
+        </span>
     </div>
 </template>
 

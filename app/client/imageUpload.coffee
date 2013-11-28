@@ -9,6 +9,7 @@ Template.cameraTest.created = ->
             uploadButtonLabel: "Save Image"
             editTitle: true
             editCaption: true
+            allowCropping: false
 
 Template.cameraTest.rendered = ->
     #FastClick.attach(document.getElementById('button-test-fc'))
@@ -64,8 +65,12 @@ Template.cameraTest.events
         #    $('#button-test-fc').parent().focus()
 
 
+#Template.carouselImage.rendered = ->
+#    Meteor.defer =>
+#        console.log("render image", @find('.carousel-image').width)
+#        $(@find('.image-title')).width($(@find('.carousel-image')).width())
 
-Template.image.helpers
+Template.carouselImage.helpers
     size: ->
         Math.round(@filesize/1000) + " kb"
 

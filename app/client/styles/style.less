@@ -2,35 +2,52 @@
 @import "packages/bootstrap-less-3/lib/less/bootstrap.lessimport";
 
 body {
-    margin-top: 50px;
+    margin-top: 36px;
+    background-color: @navbar-inverse-bg;
 }
 
-.image-container {
-
-    position: relative;
-
-    img {
-        width: 100%;
-    }
-
-    .image-title {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        text-align: center;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+.image-holder {
     
-    .image-caption {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+
+    .image-container {
+
+        //padding: 0;
+        margin: 0 auto;
+        position: relative;
         text-align: center;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+        display: inline-block;
+
+        img {
+            //position: relative;
+            max-width: 100%;
+            //width: 100%;
+        }
+
+        .image-title {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            width: 100$;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
     }
 }
 
@@ -39,8 +56,13 @@ body {
     margin: auto;
 }
 
+.my-navbar {
+    min-height: 35px;
+    border-color: @navbar-inverse-bg;
+}
+
 .my-navbar-brand {
-    margin-top: 10px;
+    margin: 5px;
     text-align:center;
     color: white;
     font-size: 18px;
