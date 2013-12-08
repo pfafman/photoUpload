@@ -1,9 +1,55 @@
 
 @import "packages/bootstrap-less-3/lib/less/bootstrap.lessimport";
 
+html {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
 body {
-    margin-top: 36px;
+    xmargin-top: 36px;
     background-color: @navbar-inverse-bg;
+}
+
+.hide {
+    display: none;
+}
+
+#toggle-btn {
+    color: #fff;
+}
+
+#toggle-btn:hover {
+    color: #ccc;
+} 
+
+.show-menu {
+    margin-left: 90%;
+}
+
+#content-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 000px;
+    width: auto;
+    height: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    overflow: hidden;
+    background-color: @navbar-inverse-bg;
+    white-space:nowrap;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    
+    webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    -ms-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .image-holder {
@@ -49,6 +95,7 @@ body {
             background-color: rgba(0, 0, 0, 0.2);
         }
     }
+
 }
 
 .photo-upload {
@@ -77,3 +124,40 @@ body {
     //width: 200px;
 }
 
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}

@@ -1,5 +1,8 @@
 
-Meteor.subscribe "photos"
+@ImagesHandle = Meteor.subscribeWithPagination "photos", 
+        timestamp: -1
+    ,
+        20
 
 Meteor.startup ->
     console.log("Meteor Start on Client")
@@ -16,4 +19,3 @@ Meteor.startup ->
                 
     else
         console.log("Not a mobile device", window)
-        

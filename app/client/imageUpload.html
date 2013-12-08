@@ -4,50 +4,73 @@
 </head>
 
 <body>
-  {{> cameraTest}}
+    {{> menu}}
+    {{> cameraTest}}
 </body>
 
+<template name="menu">
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </section>
+</template>
+
 <template name="cameraTest">
-    <nav class="my-navbar navbar navbar-fixed-top navbar-inverse">
-        <div class="my-navbar-brand">
-            Upload or take a photo
-        </div>
-    </nav>
+    <div id="content-container">
 
-    {{#if haveImages}}
-        <div class="owl-carousel">
-            {{#each images}}
-                {{> carouselImage}}
-            {{/each}}
-        </div>
-    {{/if}}
+        <nav class="my-navbar navbar navbar-static-top navbar-inverse">
+            <button type="button" id="toggle-btn" class="btn btn-link btn-lg pull-left">
+                <i class="fa fa-bars"></i>
+            </button>
 
-    <p class="photo-upload">
-        {{> photoUpload}}
-    </p>
+            <div class="my-navbar-brand">
+                Upload or take a photo
+            </div>
+        </nav>
 
-    <!--
-    <div class="container">
-        <button id="button-test" class="btn btn-default btn-sm needsclick">Test</button>
-        <button id="button-test-fc" class="btn btn-default btn-sm">Test FC</button>
+        {{#if haveImages}}
+            {{#if imagesReady}}
+            <div class="owl-carousel">
+                {{#each images}}
+                    {{> carouselImage}}
+                {{/each}}
+            </div>
+            {{else}}
+                {{> whiteSpinner}}
+            {{/if}}
+        {{/if}}
+        {{#if imagesReady}}
+            <p class="photo-upload">
+                {{> photoUpload}}
+            </p>
+        {{/if}}
+        
     </div>
-    -->
 </template>
 
 
 <template name="carouselImage">
     <div class="image-holder">
         <span class="image-container">
-            <div class="image-title">{{title}} <small>{{size}}</small></div>
+            <div class="hide image-title">{{title}} <small>{{size}}</small></div>
             <img name="{{name}}" filesize="filesize" orientation="{{orientation}}" 
-                class="carousel-image" src="{{src}}" />
+                class="carousel-image lazyOwl" data-src="{{_id}}" />
             {{#if caption}}
-                <div class="image-caption">{{caption}}</div>
+                <div class="hide image-caption">{{caption}}</div>
             {{/if}}
         </span>
     </div>
 </template>
 
 
+
+<template name="whiteSpinner">
+  <div id="white-spinner"></div>
+</template>
 
 

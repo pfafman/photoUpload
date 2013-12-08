@@ -9,7 +9,8 @@
       "coffee-alerts": {},
       "spin": {},
       "font-awesome": {},
-      "fastclick": {}
+      "fastclick": {},
+      "paginated-subscription": {}
     },
     "packages": {
       "bootstrap-less-3": {
@@ -36,6 +37,11 @@
         "git": "https://github.com/percolatestudio/meteor-fastclick",
         "tag": "v0.6.7",
         "commit": "fcb3bfd34d9f6874e626b4e24e8f54107938db41"
+      },
+      "paginated-subscription": {
+        "git": "https://github.com/tmeasday/meteor-paginated-subscription.git",
+        "tag": "v0.1.2",
+        "commit": "35e0c6112df2b4cfeb60b559276a93cac5ee2dd6"
       }
     }
   }
