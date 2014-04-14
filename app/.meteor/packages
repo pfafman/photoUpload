@@ -4,15 +4,14 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-preserve-inputs
 coffeescript
 jquery
 less
 coffee-alerts
 spin
 font-awesome
-bootstrap-less-3
 fastclick
 photo-uploader
 owl-carousel
 paginated-subscription
+bootstrap3-less

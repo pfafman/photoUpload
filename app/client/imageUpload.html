@@ -21,8 +21,10 @@
 </template>
 
 <template name="cameraTest">
+    
+    {{> photoUploadPreview }}
+    
     <div id="content-container">
-
         <nav class="my-navbar navbar navbar-static-top navbar-inverse">
             <button type="button" id="toggle-btn" class="btn btn-link btn-lg pull-left">
                 <i class="fa fa-bars"></i>
@@ -35,24 +37,27 @@
 
         {{#if haveImages}}
             {{#if imagesReady}}
-            <div class="owl-carousel">
-                {{#each images}}
-                    {{> carouselImage}}
-                {{/each}}
-            </div>
+                {{> carousel}}
             {{else}}
                 {{> whiteSpinner}}
             {{/if}}
         {{/if}}
+
         {{#if imagesReady}}
             <p class="photo-upload">
                 {{> photoUpload}}
             </p>
         {{/if}}
-        
     </div>
 </template>
 
+<template name="carousel">
+    <div class="owl-carousel">
+        {{#each images}}
+            {{> carouselImage}}
+        {{/each}}
+    </div>
+</template>
 
 <template name="carouselImage">
     <div class="image-holder">

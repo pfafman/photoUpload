@@ -1,40 +1,21 @@
 
-photoUploader = null
+Session.setDefault("imagesUpdated", null)
 
 Template.cameraTest.created = ->
-    if not photoUploader?
-        photoUploader = new PhotoUploadHandler
-            serverUploadMethod: "submitPhoto"
-            takePhotoButtonLabel: "Take Photo"
-            uploadButtonLabel: "Save Image"
-            editTitle: true
-            editCaption: true
-            allowCropping: false
-
+    console.log("cameraTest created", PhotoUploader)
+    PhotoUploader.setOptions
+        serverUploadMethod: "submitPhoto"
+        takePhotoButtonLabel: "Take Photo"
+        uploadButtonLabel: "Save Image"
+        editTitle: true
+        editCaption: true
+        allowCropping: true
+        resizeMaxHeight:        400
+        resizeMaxWidth:         350
 
 Template.cameraTest.rendered = ->
     console.log('cameraTest.rendered')
-    #FastClick.attach(document.getElementById('button-test-fc'))
     photoUploader?.reset()
-    
-    if ImagesHandle.ready()
-        $(".owl-carousel").owlCarousel
-            #navigation : true # Show next and prev buttons
-            slideSpeed : 300
-            paginationSpeed : 400
-            singleItem:true
-            transitionStyle : "fade"
-            #itemsScaleUp:true
-            autoHeight: true
-            lazyLoad: true
-            lazyFollow: true
-            lazyLoadCallback: (img) ->
-                if img
-                    Photos.findOne(img.data("src"))?.src
-            afterLazyLoad: (base, elm) ->
-                if elm
-                    elm.find(".hide").removeClass("hide")
-
          
 Template.cameraTest.helpers
 
@@ -42,21 +23,16 @@ Template.cameraTest.helpers
         Photos.find().count() > 0
 
     imagesReady: ->
+        console.log("imagesReady", ImagesHandle.ready())
         ImagesHandle.ready()
 
     imageCount: ->
         Photos.find().count()
 
-    images: ->
-        Photos.find {},
-            fields:
-                src: 0
-            sort:
-                timestamp: -1
-        
 
 teTime = 0
 showingMenu = false
+
 
 Template.cameraTest.events
     "touchend #button-test": (e) ->
@@ -87,10 +63,46 @@ Template.cameraTest.events
             $('#content-container').css('margin-left', "#{offset}px")
             showingMenu = true
 
-#Template.carouselImage.rendered = ->
-#    Meteor.defer =>
-#        console.log("render image", @find('.carousel-image').width)
-#        $(@find('.image-title')).width($(@find('.carousel-image')).width())
+
+@carouselInit = ->
+    if ImagesHandle.ready()
+        $(".owl-carousel").owlCarousel
+            #navigation : true # Show next and prev buttons
+            slideSpeed : 300
+            paginationSpeed : 400
+            singleItem:true
+            transitionStyle : "fade"
+            #itemsScaleUp:true
+            autoHeight: true
+            lazyLoad: true
+            lazyFollow: true
+            lazyLoadCallback: (img) ->
+                if img
+                    Photos.findOne(img.data("src"))?.src
+            afterLazyLoad: (base, elm) ->
+                if elm
+                    elm.find(".hide").removeClass("hide")
+    else
+        console.log("Images not ready")
+
+   
+Template.carousel.helpers
+    images: ->
+        if ImagesHandle.ready()
+            if $(".owl-carousel").data?('owlCarousel')?
+                $(".owl-carousel").data('owlCarousel').destroy()
+            Photos.find().rewind()
+            Meteor.defer ->
+                carouselInit()
+                #Session.set("imagesUpdated", new Date())
+            pc = Photos.find {},
+                fields:
+                    src: 0
+                sort:
+                    timestamp: -1
+            pc.fetch()
+
+
 
 Template.carouselImage.helpers
     size: ->

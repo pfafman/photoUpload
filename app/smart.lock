@@ -2,22 +2,14 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "bootstrap-less-3": {
-        "git": "https://github.com/ianserlin/meteor-bootstrap-less",
-        "branch": "master"
-      },
       "coffee-alerts": {},
       "spin": {},
       "font-awesome": {},
       "fastclick": {},
-      "paginated-subscription": {}
+      "paginated-subscription": {},
+      "bootstrap3-less": {}
     },
     "packages": {
-      "bootstrap-less-3": {
-        "git": "https://github.com/ianserlin/meteor-bootstrap-less",
-        "branch": "master",
-        "commit": "c4f047b24a84fe71ff9347b6a19b4d23e92b501d"
-      },
       "coffee-alerts": {
         "git": "https://github.com/pfafman/meteor-coffee-alerts.git",
         "tag": "v0.1.1",
@@ -25,8 +17,8 @@
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
-        "tag": "v0.2.0",
-        "commit": "fd3a2871a69442848b4b4e74f5e1ae28fa4a95a4"
+        "tag": "v0.2.2",
+        "commit": "3f655f0016228e4195acc784c45d3e3a247dc39f"
       },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
@@ -42,6 +34,11 @@
         "git": "https://github.com/tmeasday/meteor-paginated-subscription.git",
         "tag": "v0.1.2",
         "commit": "35e0c6112df2b4cfeb60b559276a93cac5ee2dd6"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/eprochasson/bootstrap3-less",
+        "tag": "v0.1.9",
+        "commit": "5c812c4d7ce72917a065f0424c3cf54e5ff2d16a"
       }
     }
   }

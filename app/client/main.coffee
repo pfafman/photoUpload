@@ -1,8 +1,8 @@
 
-@ImagesHandle = Meteor.subscribeWithPagination "photos", 
-        timestamp: -1
-    ,
-        20
+@ImagesHandle = Meteor.subscribeWithPagination("photos", 20)
+
+#Meteor.subscribe("photos", 20)
+
 
 Meteor.startup ->
     console.log("Meteor Start on Client")
